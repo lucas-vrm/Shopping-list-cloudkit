@@ -17,6 +17,7 @@
 		E822DF102705D27F00FE5FC2 /* Test_ProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E822DF0F2705D27F00FE5FC2 /* Test_ProjectTests.swift */; };
 		E822DF1A2705D27F00FE5FC2 /* Test_ProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E822DF192705D27F00FE5FC2 /* Test_ProjectUITests.swift */; };
 		E822DF1C2705D27F00FE5FC2 /* Test_ProjectUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E822DF1B2705D27F00FE5FC2 /* Test_ProjectUITestsLaunchTests.swift */; };
+		E822DF2B2705FE9E00FE5FC2 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E822DF2A2705FE9E00FE5FC2 /* CloudKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		E822DF152705D27F00FE5FC2 /* Test ProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Test ProjectUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E822DF192705D27F00FE5FC2 /* Test_ProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test_ProjectUITests.swift; sourceTree = "<group>"; };
 		E822DF1B2705D27F00FE5FC2 /* Test_ProjectUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test_ProjectUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		E822DF282705FE9100FE5FC2 /* Test Project.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Test Project.entitlements"; sourceTree = "<group>"; };
+		E822DF2A2705FE9E00FE5FC2 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E822DF2B2705FE9E00FE5FC2 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +89,7 @@
 				E822DF0E2705D27F00FE5FC2 /* Test ProjectTests */,
 				E822DF182705D27F00FE5FC2 /* Test ProjectUITests */,
 				E822DEF32705D27C00FE5FC2 /* Products */,
+				E822DF292705FE9E00FE5FC2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,6 +106,7 @@
 		E822DEF42705D27C00FE5FC2 /* Test Project */ = {
 			isa = PBXGroup;
 			children = (
+				E822DF282705FE9100FE5FC2 /* Test Project.entitlements */,
 				E822DEF52705D27C00FE5FC2 /* AppDelegate.swift */,
 				E822DEF72705D27C00FE5FC2 /* SceneDelegate.swift */,
 				E822DEF92705D27C00FE5FC2 /* ViewController.swift */,
@@ -128,6 +134,14 @@
 				E822DF1B2705D27F00FE5FC2 /* Test_ProjectUITestsLaunchTests.swift */,
 			);
 			path = "Test ProjectUITests";
+			sourceTree = "<group>";
+		};
+		E822DF292705FE9E00FE5FC2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E822DF2A2705FE9E00FE5FC2 /* CloudKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -441,6 +455,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Test Project/Test Project.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = N5WF5ZGHK4;
@@ -469,6 +484,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Test Project/Test Project.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = N5WF5ZGHK4;
