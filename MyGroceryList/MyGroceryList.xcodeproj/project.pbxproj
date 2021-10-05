@@ -14,6 +14,7 @@
 		E83C197127074487000E5B7E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E83C197027074487000E5B7E /* Assets.xcassets */; };
 		E83C197427074487000E5B7E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E83C197227074487000E5B7E /* LaunchScreen.storyboard */; };
 		E83C197E2707449F000E5B7E /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E83C197D2707449F000E5B7E /* CloudKit.framework */; };
+		E87D3871270B3B1100CFF7FF /* GroceryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87D3870270B3B1100CFF7FF /* GroceryItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		E83C197527074487000E5B7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E83C197B27074497000E5B7E /* MyGroceryList.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MyGroceryList.entitlements; sourceTree = "<group>"; };
 		E83C197D2707449F000E5B7E /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		E87D3870270B3B1100CFF7FF /* GroceryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceryItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 				E83C196727074484000E5B7E /* AppDelegate.swift */,
 				E83C196927074484000E5B7E /* SceneDelegate.swift */,
 				E83C196B27074484000E5B7E /* ViewController.swift */,
+				E87D3870270B3B1100CFF7FF /* GroceryItem.swift */,
 				E83C196D27074484000E5B7E /* Main.storyboard */,
 				E83C197027074487000E5B7E /* Assets.xcassets */,
 				E83C197227074487000E5B7E /* LaunchScreen.storyboard */,
@@ -154,6 +157,7 @@
 			files = (
 				E83C196C27074484000E5B7E /* ViewController.swift in Sources */,
 				E83C196827074484000E5B7E /* AppDelegate.swift in Sources */,
+				E87D3871270B3B1100CFF7FF /* GroceryItem.swift in Sources */,
 				E83C196A27074484000E5B7E /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -22,7 +22,7 @@ class ViewController: UIViewController, UITableViewDataSource {
     private let database = CKContainer(identifier: "iCloud.iOSExampleGroceryList").publicCloudDatabase
     
     var items = [String]()
-    var allRecords = [String]()
+    var allRecords = [CKRecord.ID]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,7 +39,7 @@ class ViewController: UIViewController, UITableViewDataSource {
         
         //Adiciona o botão de adicionar na direita superior
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(didTapAdd))
-        //navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .trash, target: self, action: #selector(delete(_:)))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .trash, target: self, action: #selector(deleteID))
         
         fetchItems()
         //para deletar:
@@ -55,7 +55,7 @@ class ViewController: UIViewController, UITableViewDataSource {
                 print(records)
                 // o  retorno é um array bem grande e confuso, mas queremos pegar só o nome
                 self?.items = records.compactMap({ $0.value(forKey: "name") as? String})
-                self?.allRecords = records.compactMap({ $0.value(forKey: "name") as? String})
+                //self?.allRecords = records.compactMap({ $0.value(forKey: "name") as? String})
                 print(self?.items)
                 //para recarregar a tela depois de fazer a query
                 self?.tableView.reloadData()
@@ -99,6 +99,7 @@ class ViewController: UIViewController, UITableViewDataSource {
     @objc func saveItem(name: String) {
         let record = CKRecord(recordType: "GroceryItem")
         record.setValue(name, forKey: "name")
+        allRecords.append(record.recordID)
         database.save(record) { [weak self] record, error in
             if record != nil, error == nil {
                 DispatchQueue.main.asyncAfter(deadline: .now()+2) {
@@ -127,16 +128,26 @@ class ViewController: UIViewController, UITableViewDataSource {
         cell.textLabel?.text = items[indexPath.row]
         return cell
     }
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        database.delete(withRecordID: records, completionHandler: <#T##(CKRecord.ID?, Error?) -> Void#>)
-//        if let vc = storyboard?.instantiateViewController(withIdentifier: "Detail") as? DetailViewController {
-//            vc.selectedImage = pictures[indexPath.row]
-//            vc.index = indexPath.row + 1
-//            vc.total = pictures.count
-//            navigationController?.pushViewController(vc, animated: true)
-//        }
+    
+    @objc func deleteID(at index: Int) {
+        let recordId = 
     }
     
-
+//    @objc func deleteID(){
+//        let operation = CKModifyRecordsOperation(recordsToSave: nil, recordIDsToDelete: allRecords)
+//        operation.savePolicy = .allKeys
+//        operation.modifyRecordsResultBlock = { added, deleted, error in
+//            if error != nil {
+//                print(error) // print error if any
+//            } else {
+//                // no errors, all set!
+//            }
+//        }
+//        database.add(operation)
+//        self.tableView.reloadData()
+//        print("Deleted All")
+//
+//    }
+    
 }
 
